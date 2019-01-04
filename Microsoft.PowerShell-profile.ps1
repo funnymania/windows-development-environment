@@ -151,10 +151,19 @@ function pstree {
 #######################################################
 
 function pull () { & get pull $args }
-function checkout () { & git checkout $args }
+function checkout () { & git checkout . }
+function status () { & git status $args }
+function commit () { & git commit -m $ags }
+function push () { & git push $args }
 
-del alias:gc -Force
-del alias:gp -Force
+del alias:gnope -Force
+del alias:gpl -Force
+del alias:gs -Force
+del alias:gcm -Force
+del alias:gps -Force
 
-Set-Alias -Name gc -Value checkout
-Set-Alias -Name gp -Value pull
+Set-Alias -Name gnope -Value checkout
+Set-Alias -Name gpl -Value pull
+Set-Alias -Name gs -Value status
+Set-Alias -Name gcm -Value commit
+Set-Alias -Name gps -Value push
