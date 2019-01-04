@@ -16,7 +16,7 @@ cinst -y poshgit
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 cinst Git-Credential-Manager-for-Windows
-cinst github
+cinst github-desktop
 
 ## Node, npm
 cinst -y nodejs.install
@@ -33,24 +33,26 @@ if (Test-PendingReboot) { Invoke-Reboot }
 cinst -y ruby
 cinst -y ruby.devkit
 
-cinst -y python2
+cinst -y python
+cinst -y pip
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
 ## Basics
 cinst -y vlc
+cinst -y discord
+cinst -y vivaldi
 cinst -y GoogleChrome
 cinst -y 7zip.install
 cinst -y sysinternals
-cinst -y DotNet3.5
+cinst -y unity
+cinst -y steam
 
-# cinst -y DotNet4.0 -- not needed on windows 8
-# cinst -y DotNet4.5 -- not needed on windows 10
-# cinst -y PowerShell -- not needed on windows 10
 if (Test-PendingReboot) { Invoke-Reboot }
 
 # Pinning Things
 Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
+
 
 # Let's get Updates, too
 Install-WindowsUpdate -acceptEula
