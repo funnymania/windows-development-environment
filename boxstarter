@@ -20,6 +20,7 @@ cinst github-desktop
 
 ## Node, npm
 cinst -y nodejs.install
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 npm install -g npm-windows-upgrade
 
 ## Editors
